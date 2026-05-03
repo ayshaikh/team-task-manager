@@ -183,3 +183,8 @@ class DashboardResponse(BaseModel):
     stats: DashboardStats
     assigned_tasks: List[TaskResponse]
     projects: List[ProjectResponse]
+
+# Rebuild models to resolve forward references (required with __future__ annotations)
+# This tells Pydantic 2 to re-parse all forward references after entire file is loaded
+ProjectMemberResponse.model_rebuild()
+ProjectDetailResponse.model_rebuild()
