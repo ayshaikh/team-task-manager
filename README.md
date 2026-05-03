@@ -2,7 +2,7 @@
 
 > A production-ready full-stack web application for collaborative project and task management with role-based access control, real-time updates, and a Kanban board interface.
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Railway-brightgreen)](https://team-task-manager.up.railway.app)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Railway-brightgreen)](https://impartial-miracle-production-45eb.up.railway.app/api-docs)
 [![GitHub](https://img.shields.io/badge/GitHub-Repo-blue)](https://github.com/ayshaikh/team-task-manager)
 [![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 
@@ -10,9 +10,8 @@
 
 ## 🌐 Live Demo
 
-**App URL:** https://team-task-manager.up.railway.app  
-**API Docs:** https://team-task-manager.up.railway.app/api-docs  
-**Demo Video:** https://[your-video-link]
+**App URL:**https://impartial-miracle-production-45eb.up.railway.app
+**Demo Video:** https://drive.google.com/file/d/1Kdhk9mx0tHDTgffec_6qyry68MR66FKT/view?usp=sharing
 
 ### Test Credentials
 | Role | Email | Password |
@@ -448,10 +447,10 @@ MIT — free to use, fork, and extend.
 
 ## 👤 Author
 
-**[Your Name]**  
-📧 [your.email@example.com]  
-🐙 [github.com/your-username](https://github.com/your-username)  
-💼 [linkedin.com/in/your-profile](https://linkedin.com/in/your-profile)
+**[Ayyan Shaikh]**  
+📧 [connect.ayyanshaikh@gmail.com]  
+🐙 [github.com/ayshaikh](https://github.com/ayshaikh)  
+💼 [https://www.linkedin.com/in/ayyan-shaikh](https://www.linkedin.com/in/ayyan-shaikh)
 
 ---
 
