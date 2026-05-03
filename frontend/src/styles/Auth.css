@@ -1,0 +1,168 @@
+/* ============================================
+   Auth Pages — Login / Signup
+   Teal accent, clean white card
+   ============================================ */
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--surface);
+  font-family: var(--font);
+}
+
+.auth-card {
+  background: var(--surface-white);
+  padding: 32px;
+  border-radius: 12px;
+  border: 0.5px solid var(--border-faint);
+  width: 100%;
+  max-width: 380px;
+}
+
+.auth-card h1 {
+  text-align: center;
+  color: var(--primary);
+  margin-bottom: 4px;
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.auth-card h2 {
+  text-align: center;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 0.5px solid var(--border-faint);
+  border-radius: 6px;
+  font-size: 13px;
+  background: var(--surface);
+  transition: border-color 150ms ease;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  border-color: var(--primary);
+}
+
+/* Validation error state */
+.form-group input.input-error {
+  border-color: var(--red);
+}
+
+.form-group input.input-error:focus {
+  border-color: var(--red);
+}
+
+/* Field hints */
+.field-hint {
+  display: block;
+  margin-top: 3px;
+  font-size: 10px;
+  color: var(--text-tertiary);
+}
+
+.field-hint--error {
+  color: var(--red);
+}
+
+/* Password strength indicator */
+.password-strength {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.strength-bar {
+  flex: 1;
+  height: 3px;
+  background: var(--border-faint);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.strength-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 300ms ease, background-color 300ms ease;
+}
+
+.strength-label {
+  font-size: 10px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 8px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 150ms ease;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+}
+
+.btn-primary:disabled {
+  background: var(--border-faint);
+  color: var(--text-tertiary);
+  cursor: not-allowed;
+}
+
+.error-message {
+  background: var(--red-light);
+  color: var(--red);
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border-left: 3px solid var(--red);
+  font-size: 12px;
+}
+
+.auth-link {
+  text-align: center;
+  margin-top: 16px;
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.auth-link a {
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.auth-link a:hover {
+  color: var(--primary-dark);
+}

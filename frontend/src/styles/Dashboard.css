@@ -1,0 +1,282 @@
+/* ============================================
+   Dashboard — In-shell view
+   ============================================ */
+
+.dashboard-view {
+  padding: 24px;
+  width: 100%;
+}
+
+.dashboard-loading {
+  color: var(--text-tertiary);
+  font-size: 13px;
+  padding: 40px 24px;
+}
+
+.dashboard-greeting h1 {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.dashboard-greeting p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.stat-card {
+  background: var(--surface-white);
+  border: 0.5px solid var(--border-faint);
+  border-radius: 10px;
+  padding: 14px 18px;
+  min-width: 120px;
+  flex: 1;
+}
+
+.stat-value {
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: var(--text-tertiary);
+}
+
+.stat-card--todo {
+  border-left: 3px solid #B4B2A9;
+}
+
+.stat-card--progress {
+  border-left: 3px solid var(--amber);
+}
+
+.stat-card--done {
+  border-left: 3px solid var(--primary);
+}
+
+.stat-card--overdue {
+  border-left: 3px solid var(--red);
+}
+
+.stat-card--overdue .stat-value {
+  color: var(--red);
+}
+
+/* Task section */
+.dashboard-tasks h2 {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.empty-state {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  padding: 16px 0;
+}
+
+.task-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dash-task-card {
+  background: var(--surface-white);
+  border: 0.5px solid var(--border-faint);
+  border-radius: 10px;
+  padding: 12px;
+  transition: border-color 150ms ease;
+}
+
+.dash-task-card:hover {
+  border-color: var(--border);
+}
+
+.dash-task-card--overdue {
+  border-left: 3px solid var(--red);
+}
+
+.dash-task-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.dash-task-title {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.dash-task-priority {
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+/* Unified Dashboard Extras */
+.dashboard-projects-summary {
+  margin-top: 32px;
+}
+
+.dashboard-projects-summary h2 {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.project-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.project-summary-card {
+  background: var(--surface-white);
+  border: 1px solid var(--border-faint);
+  border-radius: 10px;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 150ms ease;
+}
+
+.project-summary-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.ps-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.ps-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.ps-status {
+  font-size: 10px;
+  padding: 1px 6px;
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  border-radius: 4px;
+}
+
+.ps-meta {
+  font-size: 11px;
+  color: var(--text-tertiary);
+}
+
+.view-all-tasks-btn {
+  margin-top: 24px;
+  padding: 8px 16px;
+  background: var(--surface);
+  color: var(--text-secondary);
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 150ms ease;
+}
+
+.view-all-tasks-btn:hover {
+  background: var(--border-faint);
+  color: var(--text-primary);
+}
+
+.priority-low {
+  background: var(--green-light);
+  color: var(--green-dark);
+}
+
+.priority-medium {
+  background: var(--amber-light);
+  color: var(--amber-dark);
+}
+
+.priority-high {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+.dash-task-desc {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.dash-task-bottom {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.dash-task-status {
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.status-todo {
+  background: var(--surface);
+  color: var(--text-secondary);
+}
+
+.status-in_progress {
+  background: var(--amber-light);
+  color: var(--amber-dark);
+}
+
+.status-completed {
+  background: var(--primary-light);
+  color: var(--primary-dark);
+}
+
+.dash-task-due {
+  font-size: 10px;
+  color: var(--text-tertiary);
+}
+
+.due-overdue {
+  color: var(--red);
+  font-weight: 500;
+}
+
+.dash-task-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dash-task-project-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}

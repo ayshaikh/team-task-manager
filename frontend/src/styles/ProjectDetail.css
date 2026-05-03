@@ -1,0 +1,93 @@
+/* ============================================
+   Project Detail — In-shell view
+   ============================================ */
+
+.detail-view {
+  padding: 24px;
+  max-width: 700px;
+}
+
+.detail-loading {
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.detail-header-left h1 {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.detail-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.detail-header-actions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.detail-btn {
+  padding: 5px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  background: var(--surface);
+  color: var(--text-secondary);
+  transition: all 150ms ease;
+}
+
+.detail-btn:hover {
+  background: var(--primary-light);
+  color: var(--primary-dark);
+}
+
+/* Edit form */
+.detail-edit-form {
+  background: var(--surface-white);
+  border: 0.5px solid var(--border-faint);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 16px;
+  animation: fadeIn 200ms ease;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detail-edit-form input,
+.detail-edit-form textarea {
+  width: 100%;
+  padding: 7px 10px;
+  border: 0.5px solid var(--border-faint);
+  border-radius: 6px;
+  font-size: 12px;
+  background: var(--surface);
+  outline: none;
+  transition: border-color 150ms ease;
+  resize: vertical;
+}
+
+.detail-edit-form input:focus,
+.detail-edit-form textarea:focus {
+  border-color: var(--primary);
+}
+
+.detail-form-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.detail-content {
+  margin-top: 8px;
+}

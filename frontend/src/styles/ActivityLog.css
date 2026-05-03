@@ -1,0 +1,127 @@
+/* ============================================
+   Activity Log — Component styles
+   ============================================ */
+
+.activity-log-container {
+  background: var(--surface-white);
+  border: 0.5px solid var(--border-faint);
+  border-radius: 10px;
+  padding: 16px;
+  margin-top: 12px;
+}
+
+.activity-log-header h3 {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.activity-loading {
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+
+.activities-timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.activity-error {
+  color: var(--red);
+  font-size: 11px;
+  margin-bottom: 8px;
+}
+
+.no-activities {
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+
+.activity-item {
+  display: flex;
+  gap: 10px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.activity-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.activity-line {
+  position: absolute;
+  left: 3.5px;
+  top: 14px;
+  bottom: 0;
+  width: 1px;
+  background: var(--border-faint);
+}
+
+.activity-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.activity-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 2px;
+}
+
+.activity-action {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.activity-entity {
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-weight: 500;
+}
+
+.activity-time {
+  font-size: 10px;
+  color: var(--text-tertiary);
+}
+
+.activity-description {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.activity-toggle {
+  font-size: 10px;
+  color: var(--primary);
+  padding: 2px 0;
+  transition: color 150ms ease;
+}
+
+.activity-toggle:hover {
+  color: var(--primary-dark);
+}
+
+.activity-details {
+  margin-top: 4px;
+  padding: 8px;
+  background: var(--surface);
+  border-radius: 6px;
+}
+
+.activity-details pre {
+  font-size: 10px;
+  color: var(--text-secondary);
+  font-family: 'SF Mono', Consolas, monospace;
+  white-space: pre-wrap;
+  word-break: break-all;
+  margin: 0;
+}
