@@ -36,7 +36,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# ✅ Health check — simple, no DB dependency
+# ✅ Health check — simple, no DB dependency, responds instantly
 @app.get("/health")
 @app.get("/api/health")
 async def health_check():
@@ -50,17 +50,20 @@ async def root():
         "api_version": "1.0.0"
     }
 
-# Startup event for database initialization
+# Startup event for database initialization (non-blocking)
 @app.on_event("startup")
 async def startup_event():
     import logging
+    import asyncio
     logger = logging.getLogger("uvicorn.error")
     try:
-        # Create all database tables
-        Base.metadata.create_all(bind=engine)
-        logger.info("Database initialized")
+        # Run DB init in thread pool so it doesn't block the event loop
+        loop = asyncio.get_event_loop()
+        await loop.run_in_executor(None, lambda: Base.metadata.create_all(bind=engine))
+        logger.info("Database initialized successfully")
     except Exception as e:
-        logger.error(f"DB Error: {e}")
+        # Log error but don't crash — app can start and serve requests
+        logger.error(f"Database initialization failed: {e}")
 
 # Include routers
 app.include_router(auth.router)
