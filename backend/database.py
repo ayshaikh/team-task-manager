@@ -17,6 +17,9 @@ if env_database_url and env_database_url.startswith("sqlite:///"):
         DATABASE_URL = DEFAULT_SQLITE_URL
     else:
         DATABASE_URL = env_database_url
+elif env_database_url and env_database_url.startswith("postgres://"):
+    # SQLAlchemy requires postgresql:// instead of postgres://
+    DATABASE_URL = env_database_url.replace("postgres://", "postgresql://", 1)
 else:
     DATABASE_URL = env_database_url or DEFAULT_SQLITE_URL
 
