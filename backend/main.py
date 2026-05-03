@@ -5,6 +5,7 @@ import os
 from database import engine, Base
 from models.models import User, Project, Task, ProjectMember, TaskComment, ActivityLog
 from routers import auth, projects, tasks, activities, notifications
+import socketio
 from socketio import ASGIApp
 from sockets.events import sio
 
@@ -13,30 +14,28 @@ load_dotenv()
 
 # Initialize FastAPI app
 app = FastAPI(
-    title="Team Task Manager API",
-    description="A full-stack task management application with role-based access control",
+    title="TaskFlow API",
     version="1.0.0",
     docs_url="/api-docs",
     openapi_url="/api/openapi.json"
 )
 
-# Startup event for database initialization
+# Health check (must be at the top for maximum visibility)
+@app.get("/health")
+@app.get("/api/health")
+async def health_check():
+    return {"status": "healthy"}
+
+# Startup event
 @app.on_event("startup")
 async def startup_event():
     import logging
     logger = logging.getLogger("uvicorn.error")
     try:
-        # Create all database tables
         Base.metadata.create_all(bind=engine)
-        logger.info("Database tables initialized successfully")
+        logger.info("Database initialized")
     except Exception as e:
-        logger.error(f"Database initialization failed: {e}")
-
-# Health check endpoint (defined BEFORE socketio mount for priority)
-@app.get("/health")
-async def health_check():
-    """Health check endpoint"""
-    return {"status": "healthy", "service": "TaskFlow API"}
+        logger.error(f"DB Error: {e}")
 
 @app.get("/")
 async def root():
