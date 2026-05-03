@@ -11,8 +11,13 @@ from sockets.events import sio
 # Load environment variables
 load_dotenv()
 
-# Create all database tables
-Base.metadata.create_all(bind=engine)
+# Create all database tables (guarded - don't crash server if DB is unavailable)
+try:
+    Base.metadata.create_all(bind=engine)
+except Exception as e:
+    # Import logging lazily to avoid startup ordering issues
+    import logging
+    logging.getLogger("uvicorn.error").exception("Database initialization failed: %s", e)
 
 # Initialize FastAPI app
 app = FastAPI(
