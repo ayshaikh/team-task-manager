@@ -48,7 +48,7 @@ async def root():
 
 # Add CORS middleware
 client_url = os.getenv("CLIENT_URL", "http://localhost:5173")
-allowed_origins = [client_url, "http://localhost:5173", "http://localhost:3000"]
+allowed_origins = [client_url, "http://localhost:5173", "http://localhost:3000", "https://healthcheck.railway.app"]
 
 app.add_middleware(
     CORSMiddleware,
@@ -65,11 +65,11 @@ app.include_router(projects.router)
 app.include_router(activities.router)
 app.include_router(notifications.router)
 
-# Wrap FastAPI app with Socket.io
-asgi_app = ASGIApp(sio, app)
+# Mount Socket.io app
+socket_app = socketio.ASGIApp(sio, socketio_path='socket.io')
+app.mount("/socket.io", socket_app)
 
 if __name__ == "__main__":
     import uvicorn
     port = int(os.getenv("PORT", 8000))
-    # Note: Use asgi_app here to include Socket.io
-    uvicorn.run(asgi_app, host="0.0.0.0", port=port)
+    uvicorn.run(app, host="0.0.0.0", port=port)
