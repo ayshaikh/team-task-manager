@@ -8,17 +8,6 @@
 
 ---
 
-## 🌐 Live Demo
-
-**App URL:**https://impartial-miracle-production-45eb.up.railway.app
-
-**Demo Video:** https://drive.google.com/file/d/1Kdhk9mx0tHDTgffec_6qyry68MR66FKT/view?usp=sharing
-
-### Test Credentials
-| Role | Email | Password |
-|------|-------|----------|
-| Admin | arjun@techcorp.com | SecurePass@123 |
-| Member | sneha@techcorp.com | SecurePass@123 |
 
 ---
 
