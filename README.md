@@ -2,7 +2,6 @@
 
 > A production-ready full-stack web application for collaborative project and task management with role-based access control, real-time updates, and a Kanban board interface.
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Railway-brightgreen)](https://impartial-miracle-production-45eb.up.railway.app/api-docs)
 [![GitHub](https://img.shields.io/badge/GitHub-Repo-blue)](https://github.com/ayshaikh/team-task-manager)
 [![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 
